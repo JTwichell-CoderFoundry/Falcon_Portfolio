@@ -1,0 +1,17 @@
+﻿/*This searches for the 1 and only 1 element with the ID called target */
+#target {
+    border: 2px dotted green;
+    color: red;
+    font-size:x-large;
+}
+
+/*This searches for ALL the CLASSes called target*/
+.target {
+    border: 3px dashed orange;
+}
+
+.row {
+    height: 200px;
+    /*min-height: 30px;
+    max-height: 60px;*/
+}
