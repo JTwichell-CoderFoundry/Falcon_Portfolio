@@ -78,10 +78,10 @@
     <Content Include="assets\mail\jqBootstrapValidation.js" />
     <Content Include="css\Custom.css" />
     <Content Include="css\styles.css" />
+    <Content Include="Images\cattrigger.jfif" />
     <Content Include="Index.html" />
     <Content Include="js\scripts.js" />
-    <Content Include="LandingPage_BS3.html" />
-    <Content Include="LandingPage_BS4.html" />
+    <Content Include="js\SunsetHills.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
