@@ -19,6 +19,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 
+    <link href="Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="Content/SyntaxHighlighter/shCoreMidnight.css" rel="stylesheet" />
 
     <style>
         .fizz{
@@ -153,7 +155,7 @@
     </section>
 
     <hr />
-    <img class="img-fluid" src="/Images/cattrigger.jfif" data-toggle="modal" data-target="#portfolioModal6" alt="" />    
+    <img class="img-fluid" src="/Images/cattrigger.jfif" data-toggle="modal" data-target="#portfolioModal6" alt="" />
     <hr />
 
     <!-- Portfolio Section-->
@@ -402,7 +404,7 @@
             </div>
         </div>
     </div>
-   
+
     <!-- Portfolio Modal 3-->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
@@ -419,7 +421,7 @@
                         <br />
                         <div class="row ">
                             <div class="offset-4 col-4">
-                                <input class="form-control" id="k" type="text" placeholder="Enter K"/>
+                                <input class="form-control" id="k" type="text" placeholder="Enter K" />
                             </div>
                         </div>
                         <br />
@@ -447,7 +449,7 @@
                                 <button class="btn btn-primary btn-wide" id="btnSOAF">Click Me</button>
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="col">
                                 <p id="soafOutput"></p>
@@ -460,6 +462,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- Portfolio Modal 4-->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
@@ -475,38 +479,70 @@
                             <div class="col text-center h2">Sunset Hills Exercise</div>
                         </div>
                         <br />
-                      
+
                         <div class="row">
                             <div class="col">
-                                <input id="hillsInput1" class="form-control" placeholder="Number 1" type="text" />
+                                <input id="hillsInput1" class="form-control clearMe" placeholder="Number 1" type="text" />
                             </div>
                             <div class="col">
-                                <input id="hillsInput2" class="form-control" placeholder="Number 2" type="text" />
+                                <input id="hillsInput2" class="form-control clearMe" placeholder="Number 2" type="text" />
                             </div>
                             <div class="col">
-                                <input id="hillsInput3" class="form-control" placeholder="Number 3" type="text" />
+                                <input id="hillsInput3" class="form-control clearMe" placeholder="Number 3" type="text" />
                             </div>
                             <div class="col">
-                                <input id="hillsInput4" class="form-control" placeholder="Number 4" type="text" />
+                                <input id="hillsInput4" class="form-control clearMe" placeholder="Number 4" type="text" />
                             </div>
                             <div class="col">
-                                <input id="hillsInput5" class="form-control" placeholder="Number 5" type="text" />
+                                <input id="hillsInput5" class="form-control clearMe" placeholder="Number 5" type="text" />
                             </div>
                             <div class="col">
-                                <input id="hillsInput6" class="form-control" placeholder="Number 6" type="text" />
+                                <input id="hillsInput6" class="form-control clearMe" placeholder="Number 6" type="text" />
                             </div>
                         </div>
                         <br />
 
                         <div class="row">
                             <div class="col">
-                                <button class="btn btn-warning btn-wide" id="btnHills">Click Me</button>
+                                <button id="btnRunHills" class="btn btn-dark btn-wide">Run Sunset Hills</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-success btn-wide" id="btnShowHills">Show Code</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger btn-wide" id="btnClearHills">Clear All</button>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col">
                                 <p id="hillsOutput"></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div id="hillsCode">
+                                    <pre class="brush: js">
+                                        function SunsetHills(buildings) {
+                                            //Set tallest to the smallest possible number
+                                            let tallest = Number.MIN_VALUE;
+
+                                            //Here I want to build a new array that contains just the building that can see the sunset
+                                            let sunsetViews = new Array();
+
+                                            for (var index = 0; index < buildings.length; index++) {
+                                                if (buildings[index] > tallest) {
+                                                    tallest = buildings[index];
+                                                    sunsetViews.push(`The Building in position ${index} with height ${tallest} can see the sunset. <br>`);
+                                                }
+                                            }
+
+                                            return sunsetViews.join("");
+                                        }
+
+                                    </pre>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -590,6 +626,14 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 
+
+    <!--Required SH JS file-->
+    <script src="Scripts/SyntaxHighlighter/shCore.js"></script>
+    <script src="Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+    <script>
+        SyntaxHighlighter.all();
+    </script>
+
     <script src="js/SunsetHills.js"></script>
 
     <script>
@@ -647,7 +691,7 @@
         });
 
     </script>
-    <script>      
+    <script>
         $("#btnSOAF").on("click", function () {
             let k = Number($("#k").val());
 
@@ -669,10 +713,10 @@
                 //Determine what number you need to solve for the given K...
                 //find k - myArray[index]
                 target = k - myArray[index];
-               
+
                 //arr.indexOf(searchElement[, fromIndex])
-                //if (myArray.indexOf(target, index + 1) > 0) {      
-                if (myArray.indexOf(target, index + 1) >= 0) {      
+                //if (myArray.indexOf(target, index + 1) > 0) {
+                if (myArray.indexOf(target, index + 1) >= 0) {
                     found = true;
                     break;
                 }
@@ -687,7 +731,10 @@
     </script>
 
     <script>
-        $("#btnHills").on("click", function () {
+        $("#hillsCode").hide();
+
+
+        $("#btnRunHills").on("click", function () {
 
             let myArray = new Array();
             myArray.push(Number($("#hillsInput1").val()));
@@ -699,9 +746,24 @@
 
             $("#hillsOutput").html(SunsetHills(myArray));
         });
+        $("#btnClearHills").on("click", function () {
+            //$("#hillsInput1").val("");
+            //$("#hillsInput2").val("");
+            //$("#hillsInput3").val("");
+            //$("#hillsInput4").val("");
+            //$("#hillsInput5").val("");
+            //$("#hillsInput6").val("");
+            //$("#hillsInput1, #hillsInput2, #hillsInput3, #hillsInput4, #hillsInput5, #hillsInput6").val("");
+            $(".clearMe").val("");
+            $("#hillsOutput").text("");
+        });
 
+        $("#btnShowHills").on("click", function () {
+            $("#hillsCode").toggle();
 
-
+            let btnText = $(this).text();
+            $(this).text($(this).text().startsWith("Show") ? btnText.replace("Show", "Hide") : btnText.replace("Hide", "Show"));
+        });
     </script>
 
 </body>
