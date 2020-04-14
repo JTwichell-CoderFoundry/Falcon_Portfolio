@@ -751,6 +751,8 @@
             myArray.push(Number($("#hillsInput5").val()));
             myArray.push(Number($("#hillsInput6").val()));
 
+            //CHECK THIS OUT...
+            //This is an example of how to call a named function "SunsetHillEx" and pass it an argument.
             $("#hillsOutput").html(SunsetHillEx(myArray));
         });
 
@@ -767,8 +769,12 @@
         });
 
         $("#btnShowHills").on("click", function () {
+            //CHECK THIS OUT...
+            //Here I am using the built in toggle function to switch my div from visible to hidden
             $("#hillsCode").toggle();
 
+            //CHECK THIS OUT...
+            //Here I am using a ternary operator to determine what the button text should be
             let btnText = $(this).text();
             $(this).text($(this).text().startsWith("Show") ? btnText.replace("Show", "Hide") : btnText.replace("Hide", "Show"));
         });
