@@ -627,12 +627,19 @@
     <script src="js/scripts.js"></script>
 
 
+    <!--Sweet Alert 2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
     <!--Required SH JS file-->
     <script src="Scripts/SyntaxHighlighter/shCore.js"></script>
     <script src="Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
     <script>
         SyntaxHighlighter.all();
     </script>
+
+
+
 
     <script src="js/SunsetHills.js"></script>
 
@@ -744,8 +751,9 @@
             myArray.push(Number($("#hillsInput5").val()));
             myArray.push(Number($("#hillsInput6").val()));
 
-            $("#hillsOutput").html(SunsetHills(myArray));
+            $("#hillsOutput").html(SunsetHillEx(myArray));
         });
+
         $("#btnClearHills").on("click", function () {
             //$("#hillsInput1").val("");
             //$("#hillsInput2").val("");
