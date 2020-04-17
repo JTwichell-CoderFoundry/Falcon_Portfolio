@@ -99,8 +99,10 @@
     <Content Include="Index.html" />
     <Content Include="js\scripts.js" />
     <Content Include="js\SunsetHills.js" />
+    <Content Include="NewPage.html" />
     <Content Include="Scripts\FizzBuzz.js" />
     <Content Include="Scripts\GenericLib.js" />
+    <Content Include="Scripts\NewFile.js" />
     <Content Include="Scripts\SyntaxHighlighter\shAutoloader.js" />
     <Content Include="Scripts\SyntaxHighlighter\shBrushAppleScript.js" />
     <Content Include="Scripts\SyntaxHighlighter\shBrushAS3.js" />
